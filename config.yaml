@@ -1,0 +1,393 @@
+---
+# config data for sam-search client
+sam_url: https://api.sam.gov/opportunities/v2/search
+from_days_back: 1
+naics:
+  - code: 519190
+    desc: "All Other Information Services"
+  - code: 518210
+    desc: "Data Processing, Hosting, and Related Services"
+  - code: 541430
+    desc: "Graphic Design Services"
+  - code: 541490
+    desc: "Other Specialized Design Services"
+  - code: 541511
+    desc: "Custom Computer Programming Services"
+  - code: 541512
+    desc: "Computer Systems Design Services"
+  - code: 541519
+    desc: "Other Computer Related Services"
+  - code: 541611
+    desc: "Administrative Management and General Management Consulting Services"
+  - code: 541618
+    desc: "Other Management Consulting Services"
+  - code: 541690
+    desc: "Other Scientific and Technical Consulting Services"
+  - code: 541990
+    desc: "All Other Professional, Scientific, and Technical Services"
+  - code: 92119
+    desc: "Other General Government Support"
+  - code: 921190
+    desc: "Other General Government Support"
+  - code: 541715
+    desc: "Research and Development in the Physical, Engineering, and Life Sciences (except Nanotechnology and Biotechnology)"
+set_asides:
+  - code: SBA
+    desc: "Total SB"
+  - code: SBP
+    desc: "Partial SB"
+  - code: 8A
+    desc: "8(a)"
+  - code: 8AN
+    desc: "8(a) Sole Source"
+  - code: HZC
+    desc: "HUBZone"
+  - code: HZS
+    desc: "HUBZone Sole Source"
+  - code: SDVOSBC
+    desc: "SDVOSB"
+  - code: SDVOSBS
+    desc: "SDVOSB Sole Source"
+  - code: WOSB
+    desc: "WOSB"
+  - code: WOSBSS
+    desc: "WOSB Sole Source"
+  - code: EDWOSB
+    desc: "EDWOSB"
+  - code: EDWOSBSS
+    desc: "EDWOSB Sole Source"
+  - code: LAS
+    desc: "Local Area"
+  - code: IEE
+    desc: "Interior IEE"
+  - code: ISBEE
+    desc: "Interior ISBEE"
+  - code: BICiv
+    desc: "IHS BICiv"
+  - code: VSA
+    desc: "Veteran-Owned SB"
+  - code: VSS
+    desc: "Veteran-Owned SB Sole Source"
+agencies:
+  - agency: "ADMINISTRATION FOR CHILDREN AND FAMILIES"
+    abbr: "HHS - ACF"
+  - agency: "ADMINISTRATION FOR STRATEGIC PREPAREDNESS AND RESPONSE"
+    abbr: "HHS - ASPR"
+  - agency: "ADMINISTRATIVE OFFICE OF THE US COURTS"
+    abbr: "AO US Courts"
+  - agency: "AGRICULTURAL RESEARCH SERVICE"
+    abbr: "USDA - ARS"
+  - agency: "AGENCY FOR HEALTHCARE RESEARCH AND QUALITY"
+    abbr: "HHS - AHRQ"
+  - agency: "AGENCY FOR INTERNATIONAL DEVELOPMENT"
+    abbr: USAID
+  - agency: "AGRICULTURE, DEPARTMENT OF"
+    abbr: USDA
+  - agency: "AMERICAN BATTLE MONUMENTS COMMISSION"
+    abbr: ABMC
+  - agency: "ANIMAL AND PLANT HEALTH INSPECTION SERVICE"
+    abbr: "USDA - APHIS"
+  - agency: "ARCHITECT OF THE CAPITOL"
+    abbr: "Architect of the Capitol"
+  - agency: "ATF ACQUISITION AND PROPERTY MGMT DIV"
+    abbr: ATF
+  - agency: "BUREAU OF ENGRAVING AND PRINTING"
+    abbr: "Treasury - BEP"
+  - agency: "BUREAU OF THE FISCAL SERVICE"
+    abbr: "Treasury - Fiscal Service"
+  - agency: "BUREAU OF INDIAN AFFAIRS"
+    abbr: "Interior - Indian Affairs"
+  - agency: "BUREAU OF INDUSTRY AND SECURITY"
+    abbr: "Commerce - BIS"
+  - agency: "BUREAU OF LAND MANAGEMENT"
+    abbr: "Interior - BLM"
+  - agency: "BUREAU OF OCEAN ENERGY MANAGEMENT"
+    abbr: "DOI - BOEM"
+  - agency: "BUREAU OF RECLAMATION"
+    abbr: "Interior - Reclamation"
+  - agency: "BUREAU OF SAFETY AND ENVIRONMENTAL ENFORCEMENT"
+    abbr: "Interior - BSEE"
+  - agency: "CENTERS FOR DISEASE CONTROL AND PREVENTION"
+    abbr: CDC
+  - agency: "CENTERS FOR MEDICARE AND MEDICAID SERVICES"
+    abbr: CMS
+  - agency: "COMMERCE, DEPARTMENT OF"
+    abbr: Commerce
+  - agency: "COMMODITY FUTURES TRADING COMMISSION"
+    abbr: CFTC
+  - agency: "CONSUMER FINANCIAL PROTECTION BUREAU"
+    abbr: CFPB
+  - agency: "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE"
+    abbr: AmeriCorps
+  - agency: "COURT SERVICES AND OFFENDER SUPERVISION AGENCY"
+    abbr: "DC - Court Services and Offender Supervision Agency"
+  - agency: "DEFENSE ADVANCED RESEARCH PROJECTS AGENCY (DARPA)"
+    abbr: DARPA
+  - agency: "DEFENSE ADVANCED RESEARCH PROJECTS AGENCY  (DARPA)"
+    abbr: DARPA
+  - agency: "DEFENSE COMMISSARY AGENCY (DECA)"
+    abbr: "DOD - DECA"
+  - agency: "DEFENSE CONTRACT MANAGEMENT AGENCY (DCMA)"
+    abbr: "DOD - DCMA"
+  - agency: "DEFENSE COUNTERINTELLIGENCE AND SECURITY AGENCY (DCSA)"
+    abbr: DCSA
+  - agency: "DEFENSE COUNTERINTELLIGENCE AND SECURITY AGENCY"
+    abbr: DCSA
+  - agency: "DEFENSE FINANCE AND ACCOUNTING SERVICE (DFAS)"
+    abbr: "DOD - DFAS"
+  - agency: "DEFENSE HEALTH AGENCY (DHA)"
+    abbr: DHA
+  - agency: "DEFENSE HUMAN RESOURCES ACTIVITY"
+    abbr: "DOD - DHRA"
+  - agency: "DEFENSE INFORMATION SYSTEMS AGENCY (DISA)"
+    abbr: DISA
+  - agency: "DEFENSE INTELLIGENCE AGENCY"
+    abbr: DIA
+  - agency: "DEFENSE INTELLIGENCE AGENCY (DIA)"
+    abbr: DIA
+  - agency: "DEFENSE LOGISTICS AGENCY"
+    abbr: DLA
+  - agency: "DEFENSE LOGISTICS AGENCY (DLA)"
+    abbr: DLA
+  - agency: "DEFENSE MEDIA ACTIVITY (DMA)"
+    abbr: "DOD - DMA"
+  - agency: "DEFENSE MICROELECTRONICS ACTIVITY (DMEA)"
+    abbr: "DOD - DMEA"
+  - agency: "DEFENSE THREAT REDUCTION AGENCY (DTRA)"
+    abbr: DTRA
+  - agency: "DEPT OF DEFENSE"
+    abbr: DOD
+  - agency: "DEPT OF DEFENSE EDUCATION ACTIVITY (DODEA)"
+    abbr: "DOD - DODEA"
+  - agency: "FOOD AND DRUG ADMINISTRATION"
+    abbr: FDA
+  - agency: "DEPT OF THE AIR FORCE"
+    abbr: "Air Force"
+  - agency: "DEPT OF THE ARMY"
+    abbr: "Army"
+  - agency: "DEPT OF THE NAVY"
+    abbr: "Navy"
+  - agency: "DRUG ENFORCEMENT ADMINISTRATION"
+    abbr: DEA
+  - agency: "EDUCATION, DEPARTMENT OF"
+    abbr: "Education"
+  - agency: "ENERGY, DEPARTMENT OF"
+    abbr: "Energy"
+  - agency: "ENVIRONMENTAL PROTECTION AGENCY"
+    abbr: EPA
+  - agency: "EXECUTIVE OFFICE OF THE PRESIDENT"
+    abbr: "Executive Office of the President"
+  - agency: "EXPORT-IMPORT BANK OF THE UNITED STATES"
+    abbr: "EXIM"
+  - agency: "EXPORT-IMPORT BANK OF THE US"
+    abbr: "EXIM"
+  - agency: "FARM PRODUCTION AND CONSERVATION BUSINESS CENTER"
+    abbr: FPAC
+  - agency: "FEDERAL ACQUISITION SERVICE"
+    abbr: GSA
+  - agency: "FEDERAL BUREAU OF INVESTIGATION"
+    abbr: FBI
+  - agency: "FEDERAL COMMUNICATIONS COMMISSION"
+    abbr: FCC
+  - agency: "FEDERAL DEPOSIT INSURANCE CORPORATION"
+    abbr: FDIC
+  - agency: "FEDERAL EMERGENCY MANAGEMENT AGENCY"
+    abbr: FEMA
+  - agency: "FEDERAL ENERGY REGULATORY COMMISSION"
+    abbr: FERC
+  - agency: "FEDERAL HIGHWAY ADMINISTRATION"
+    abbr: FHWA
+  - agency: "FEDERAL LAW ENFORCEMENT TRAINING CENTER"
+    abbr: "DHS - FLETC"
+  - agency: "FEDERAL MEDIATION AND CONCILIATION SERVICE"
+    abbr: FMCS
+  - agency: "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION"
+    abbr: "DOT - FMCSA"
+  - agency: "FEDERAL PRISON SYSTEM / BUREAU OF PRISONS"
+    abbr: "DOJ - FBOP"
+  - agency: "FEDERAL RAILROAD ADMINISTRATION"
+    abbr: "DOT - FRA"
+  - agency: "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD"
+    abbr: FRTIB
+  - agency: "FEDERAL TRANSIT ADMINISTRATION"
+    abbr: "Transportation - FTA"
+  - agency: "FOOD AND NUTRITION SERVICE"
+    abbr: "USDA - FNS"
+  - agency: "FOOD SAFETY AND INSPECTION SERVICE"
+    abbr: "USDA - FSIS"
+  - agency: "FOREST SERVICE"
+    abbr: "Forest Service"
+  - agency: "GAO, EXCEPT COMPTROLLER GENERAL"
+    abbr: GAO
+  - agency: "GREAT LAKES ST LAWRENCE SEAWAY DEVELOPMENT CORPORATION"
+    abbr: "DOT - Great Lakes St Lawrence Seaway Develop Corp"
+  - agency: "GENERAL SERVICES ADMINISTRATION"
+    abbr: GSA
+  - agency: "GOVERNMENT ACCOUNTABILITY OFFICE"
+    abbr: GAO
+  - agency: "HEALTH AND HUMAN SERVICES, DEPARTMENT OF"
+    abbr: HHS
+  - agency: "HEALTH RESOURCES AND SERVICES ADMINISTRATION"
+    abbr: HRSA
+  - agency: "HOMELAND SECURITY, DEPARTMENT OF"
+    abbr: DHS
+  - agency: "HOUSE OF REPRESENTATIVES, THE"
+    abbr: "House of Representatives"
+  - agency: "HOUSING AND URBAN DEVELOPMENT, DEPARTMENT OF"
+    abbr: HUD
+  - agency: "IMMED OFFICE OF THE SECRETARY OF HEALTH AND HUMAN SERVICES"
+    abbr: HHS
+  - agency: "INDIAN HEALTH SERVICE"
+    abbr: IHS
+  - agency: "INTELLIGENCE ADVANCED RESEARCH PROJECTS ACTIVITY"
+    abbr: "DNI - IARPA"
+  - agency: "INTERIOR, DEPARTMENT OF THE"
+    abbr: Interior
+  - agency: "INTERNAL REVENUE SERVICE"
+    abbr: IRS
+  - agency: "INTERNATIONAL TRADE COMMISSION"
+    abbr: "International Trade Commission"
+  - agency: "JUSTICE, DEPARTMENT OF"
+    abbr: DOJ
+  - agency: "LABOR, DEPARTMENT OF"
+    abbr: DOL
+  - agency: "MARITIME ADMINISTRATION"
+    abbr: "DOT - Maritime Administration"
+  - agency: "MERIT SYSTEMS PROTECTION BOARD"
+    abbr: "Merit Systems Protection Board"
+  - agency: "MISSILE DEFENSE AGENCY (MDA)"
+    abbr: "DOD - MDA"
+  - agency: "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION"
+    abbr: NASA
+  - agency: "NATIONAL ARCHIVES AND RECORDS ADMINISTRATION"
+    abbr: NARA
+  - agency: "NATIONAL GEOSPATIAL-INTELLIGENCE AGENCY (NGA)"
+    abbr: NGA
+  - agency: "NATIONAL HIGHWAY TRAFFIC SAFETY ADMINISTRATION"
+    abbr: NHTSA
+  - agency: "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY"
+    abbr: NIST
+  - agency: "NATIONAL INSTITUTES OF HEALTH"
+    abbr: NIH
+  - agency: "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"
+    abbr: NOAA
+  - agency: "NATIONAL PARK SERVICE"
+    abbr: NPS
+  - agency: "NATIONAL SCIENCE FOUNDATION"
+    abbr: NSF
+  - agency: "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION"
+    abbr: NTIA
+  - agency: "NATIONAL TRANSPORTATION SAFETY BOARD"
+    abbr: NTSB
+  - agency: "NUCLEAR REGULATORY COMMISSION"
+    abbr: NRC
+  - agency: "OFFICE OF ADMINISTRATIVE SERVICES"
+    abbr: "GSA - OAS"
+  - agency: "OFFICE OF ASSISTANT SECRETARY FOR PREPAREDNESS AND RESPONSE"
+    abbr: "HHS - ASPR"
+  - agency: "OFFICE OF THE ASSISTANT SECRETARY FOR ADMINISTRATION AND MANAGEMENT"
+    abbr: "DOL - OASAM"
+  - agency: "OFFICE OF PROCUREMENT OPERATIONS"
+    abbr: "DHS - OPO"
+  - agency: "OFFICES, BOARDS AND DIVISIONS"
+    abbr: "DOJ - OBD"
+  - agency: "FEDERAL AVIATION ADMINISTRATION"
+    abbr: FAA
+  - agency: "LIBRARY OF CONGRESS"
+    abbr: "Library of Congress"
+  - agency: "MILLENNIUM CHALLENGE CORPORATION"
+    abbr: "Millenium Challenge Corp"
+  - agency: "OFFICE OF THE ASSISTANT SECRETARY FOR ADMINISTRATION (ASA)"
+    abbr: "HHS - ASA"
+  - agency: "OFFICE OF PERSONNEL MANAGEMENT"
+    abbr: OPM
+  - agency: "PENSION BENEFIT GUARANTY CORPORATION"
+    abbr: PBGC
+  - agency: "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION"
+    abbr: "DOT - PHMSA"
+  - agency: "POSTAL SERVICE"
+    abbr: USPS
+  - agency: "PUBLIC BUILDINGS SERVICE"
+    abbr: "GSA - PBS"
+  - agency: "RURAL HOUSING SERVICE"
+    abbr: "USDA - Rural Housing"
+  - agency: "SECURITIES AND EXCHANGE COMMISSION"
+    abbr: SEC
+  - agency: "SMALL BUSINESS ADMINISTRATION"
+    abbr: SBA
+  - agency: "SMITHSONIAN INSTITUTION"
+    abbr: "Smithsonian"
+  - agency: "SOCIAL SECURITY ADMINISTRATION"
+    abbr: SSA
+  - agency: "STATE, DEPARTMENT OF"
+    abbr: "State Dept"
+  - agency: "SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION"
+    abbr: SAMHSA
+  - agency: "THE UNITED STATES SENATE SERGEANT AT ARMS"
+    abbr: "Senate - Sergeant at Arms"
+  - agency: "TRANSPORTATION, DEPARTMENT OF"
+    abbr: Transportation
+  - agency: "TRANSPORTATION SECURITY ADMINISTRATION"
+    abbr: TSA
+  - agency: "TREASURY, DEPARTMENT OF THE"
+    abbr: Treasury
+  - agency: "UNIFORMED SERVICES UNIVERSITY OF THE HEALTH SCIENCES (USUHS)"
+    abbr: "Uniformed Services University"
+  - agency: "UNITED STATES INTERNATIONAL DEVELOPMENT FINANCE CORPORATION"
+    abbr: DFC
+  - agency: "UNITED STATES AGENCY FOR GLOBAL MEDIA, BBG"
+    abbr: "Agency for Global Media"
+  - agency: "US CENSUS BUREAU"
+    abbr: Census
+  - agency: "US CITIZENSHIP AND IMMIGRATION SERVICES"
+    abbr: USCIS
+  - agency: "U.S. COAST GUARD"
+    abbr: USCG
+  - agency: "US COAST GUARD"
+    abbr: USCG
+  - agency: "US CUSTOMS AND BORDER PROTECTION"
+    abbr: CBP
+  - agency: "USDA, DEPARTMENTAL ADMINISTRATION"
+    abbr: USDA
+  - agency: "US GEOLOGICAL SURVEY"
+    abbr: USGS
+  - agency: "UNITED STATES GOVERNMENT PUBLISHING OFFICE"
+    abbr: GPO
+  - agency: "US FISH AND WILDLIFE SERVICE"
+    abbr: "Interior - FWS"
+  - agency: "US IMMIGRATION AND CUSTOMS ENFORCEMENT"
+    abbr: ICE
+  - agency: "US MARSHALS SERVICE"
+    abbr: "US Marshals"
+  - agency: "US PATENT AND TRADEMARK OFFICE"
+    abbr: USPTO
+  - agency: "UNITED STATES TRADE AND DEVELOPMENT AGENCY"
+    abbr: USTDA
+  - agency: "US SECRET SERVICE"
+    abbr: "Secret Service"
+  - agency: "US SPECIAL OPERATIONS COMMAND (USSOCOM)"
+    abbr: USSOCOM
+  - agency: "U.S. TRANSPORTATION COMMAND (USTRANSCOM)"
+    abbr: USTRANSCOM
+  - agency: "US TRANSPORTATION COMMAND (USTRANSCOM)"
+    abbr: USTRANSCOM
+  - agency: "VETERANS AFFAIRS, DEPARTMENT OF"
+    abbr: VA
+  - agency: "WASHINGTON HEADQUARTERS SERVICES (WHS)"
+    abbr: "DOD - WHS"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
