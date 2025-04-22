@@ -39,6 +39,7 @@ def search(criteria, yday):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
+        page.set_default_timeout(60000)
         page.goto(url)
         tables = page.locator('table[class^="resultbox"]')
         count = tables.count()
@@ -68,7 +69,7 @@ def search(criteria, yday):
                     view_link.nth(0).click()
 
                 new_page = new_page_info.value
-                new_page.wait_for_load_state("load")
+                new_page.wait_for_load_state("load", timeout=60000)
 
                 contract_info["reason"] = new_page.locator(
                     'input[name="reasonForModification"]'
