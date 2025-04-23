@@ -65,7 +65,7 @@ def search(criteria, yday):
                 # Go to View hyperlink
                 view_link = table.locator('a:has-text("(View)")')
 
-                with page.context.expect_page() as new_page_info:
+                with page.context.expect_page(timeout=60000) as new_page_info:
                     view_link.nth(0).click()
 
                 new_page = new_page_info.value
