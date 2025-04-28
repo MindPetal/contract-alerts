@@ -7,7 +7,7 @@ import logging
 import sys
 from datetime import date, datetime, timedelta
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Locator, sync_playwright
 import client
 from client.rest import ApiException
 
@@ -16,12 +16,12 @@ log = logging.getLogger("search")
 logging.basicConfig(level=logging.INFO)
 
 
-def get_value(item):
+def get_value(item: Locator) -> str:
     # Extract value
     return item.nth(0).locator("xpath=following-sibling::td[1]").inner_text().strip()
 
 
-def search(criteria, yday):
+def search(criteria: dict, yday: str) -> tuple[list[dict], str]:
     # Execute fpds search
 
     url = "https://www.fpds.gov/ezsearch/fpdsportal?q="
@@ -86,12 +86,12 @@ def search(criteria, yday):
         return contract_details, url
 
 
-def build_textblock(content):
+def build_textblock(content: str) -> dict:
     # Build TextBlock for MS Teams
     return {"type": "TextBlock", "text": content, "wrap": True}
 
 
-def format_results(raw_results):
+def format_results(raw_results: list[dict]) -> list:
     # Format results strings
 
     items = []
@@ -116,7 +116,7 @@ def format_results(raw_results):
     return items
 
 
-def process_search(contract_list, naics_list):
+def process_search(contract_list: str, naics_list: str) -> list:
     # Prepare fpds search and format results
     contract_pairs = []
     naics_pairs = []
@@ -176,7 +176,7 @@ def process_search(contract_list, naics_list):
     return format_results(raw_results)
 
 
-def teams_post(api_client, items):
+def teams_post(api_client: client.ApiClient, items: list[dict]) -> None:
     # Execute MS Teams post
     api_instance = client.MsApi(api_client)
 
@@ -202,7 +202,7 @@ def teams_post(api_client, items):
         log.exception("Exception when calling MsApi->teams_post: %s\n" % e)
 
 
-def main(contract_list, naics_list, ms_webhook_url):
+def main(contract_list: str, naics_list: str, ms_webhook_url: str) -> None:
     # Primary processing fuction
 
     log.info("Start processing")
