@@ -10,6 +10,7 @@ from datetime import date, datetime, timedelta
 from playwright.sync_api import Locator, sync_playwright
 import client
 from client.rest import ApiException
+import time
 
 
 log = logging.getLogger("search")
@@ -147,6 +148,8 @@ def process_search(contract_list: str, naics_list: str) -> list:
                 }
             )
 
+        time.sleep(5)
+
     for pair in naics_pairs:
         log.info("Processing NAICS search")
 
@@ -164,6 +167,8 @@ def process_search(contract_list: str, naics_list: str) -> list:
                     "url": url,
                 }
             )
+
+        time.sleep(5)
 
     if raw_results:
         # Inject index into results
