@@ -34,7 +34,7 @@ def search(criteria: dict, yday: str) -> tuple[list[dict], str]:
         naics = criteria["naics"]
         agency = criteria["agency"]
         url += f"CONTRACTING_AGENCY_NAME%3A%22{agency}%22+PRINCIPAL_NAICS_CODE%3A%22{naics}%22++SIGNED_DATE%3A%5B{yday}%2C%29&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
-
+        
     contract_details = []
 
     with sync_playwright() as p:
@@ -110,7 +110,8 @@ def format_results(raw_results: list[dict]) -> list:
                 content = f'**{result["index"]}. All of NAICS {result["naics"]} - {agency} - [View updates]({result["url"]})**'
 
             for detail in result["contract_details"]:
-                content += f'\n\n- {detail["date"]} **|** {detail["company"]} **|** {detail["reason"]} **|** {detail["obligation"]} **|** {detail["desc"]}'
+                desc = detail["desc"].replace("\n", " ")
+                content += f'\n\n- {detail["date"]} **|** {detail["company"]} **|** {detail["reason"]} **| {detail["obligation"]} |** {desc}'
 
             items += [build_textblock(content), build_textblock("")]
 
@@ -212,7 +213,7 @@ def main(contract_list: str, naics_list: str, ms_webhook_url: str) -> None:
 
     log.info("Start processing")
     contract_results = process_search(contract_list, naics_list)
-
+    
     if contract_results:
         log.info("Process Teams posts")
         api_config = client.Configuration()
