@@ -25,16 +25,16 @@ def get_value(item: Locator) -> str:
 def search(criteria: dict, yday: str) -> tuple[list[dict], str]:
     # Execute fpds search
 
-    url = "https://www.fpds.gov/ezsearch/fpdsportal?q="
+    base_url = "https://www.fpds.gov/ezsearch/fpdsportal?q="
 
     if "contract_no" in criteria:
         contract_no = criteria["contract_no"]
-        url += f"{contract_no}%20%20SIGNED_DATE%3A%5B{yday}%2C%29&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
+        url = f"{base_url}{contract_no}%20%20SIGNED_DATE%3A%5B{yday}%2C%29&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
     elif "naics" in criteria:
         naics = criteria["naics"]
         agency = criteria["agency"]
-        url += f"CONTRACTING_AGENCY_NAME%3A%22{agency}%22+PRINCIPAL_NAICS_CODE%3A%22{naics}%22++SIGNED_DATE%3A%5B{yday}%2C%29&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
-        
+        url = f"{base_url}CONTRACTING_AGENCY_NAME%3A%22{agency}%22+PRINCIPAL_NAICS_CODE%3A%22{naics}%22++SIGNED_DATE%3A%5B{yday}%2C%29&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
+
     contract_details = []
 
     with sync_playwright() as p:
@@ -56,8 +56,13 @@ def search(criteria: dict, yday: str) -> tuple[list[dict], str]:
                 contract_info["date"] = get_value(
                     table.locator('td:has(span:has-text("Date Signed:"))')
                 )
-                contract_info["company"] = get_value(
+                company = get_value(
                     table.locator('td:has(span:has-text("Legal Business Name:"))')
+                )
+                contract_info["company"] = company
+                company_url_encoded = company.replace(" ", "%20")
+                contract_info["company_url"] = (
+                    f"{base_url}UEI_NAME%3A%22{company_url_encoded}%22&templateName=1.5.3&indexName=awardfull&sortBy=SIGNED_DATE&desc=Y"
                 )
                 contract_info["obligation"] = get_value(
                     table.locator('td:has(span:has-text("Action Obligation:"))')
@@ -104,14 +109,14 @@ def format_results(raw_results: list[dict]) -> list:
         for result in raw_results:
 
             if "contract_no" in result:
-                content = f'**{result["index"]}. {result["contract_nm"]} - {result["contract_no"]} - [View updates]({result["url"]})**'
+                content = f'**{result["index"]}. {result["contract_nm"]} -** {result["contract_no"]} - [View updates]({result["url"]})'
             elif "naics" in result:
                 agency = result["agency"].replace("+", " ")
                 content = f'**{result["index"]}. All of NAICS {result["naics"]} - {agency} - [View updates]({result["url"]})**'
 
             for detail in result["contract_details"]:
                 desc = detail["desc"].replace("\n", " ")
-                content += f'\n\n- {detail["date"]} **|** {detail["company"]} **|** {detail["reason"]} **| {detail["obligation"]} |** {desc}'
+                content += f'\n\n- **Date Signed:** {detail["date"]} | **Company:** [{detail["company"]}]({detail["company_url"]}) | **Reason:** {detail["reason"]} | **Obligation:** {detail["obligation"]} | **Description:** {desc}'
 
             items += [build_textblock(content), build_textblock("")]
 
@@ -213,7 +218,7 @@ def main(contract_list: str, naics_list: str, ms_webhook_url: str) -> None:
 
     log.info("Start processing")
     contract_results = process_search(contract_list, naics_list)
-    
+
     if contract_results:
         log.info("Process Teams posts")
         api_config = client.Configuration()
