@@ -46,6 +46,7 @@ def test_format_results():
                 {
                     "date": "02/25/2024",
                     "company": "Test Company",
+                    "company_url": "https://example.com",
                     "reason": "Exercise An Option",
                     "obligation": "$50",
                     "desc": "This exercises option year.",
@@ -61,6 +62,7 @@ def test_format_results():
                 {
                     "date": "02/25/2024",
                     "company": "Test Company",
+                    "company_url": "https://example.com",
                     "reason": "Exercise An Option",
                     "obligation": "$50",
                     "desc": "This exercises option year.",
@@ -83,7 +85,7 @@ def test_format_results():
         },
         {
             "type": "TextBlock",
-            "text": "**1. Test Contract Name - 123456789 - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**1. Test Contract Name -** 123456789 - [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -93,7 +95,7 @@ def test_format_results():
         },
         {
             "type": "TextBlock",
-            "text": "**2. All of NAICS 541512 - Test Agency - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**2. All of NAICS 541512 - Test Agency - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -113,6 +115,7 @@ def test_process_search_contract_naics_results(mocker):
         {
             "date": "02/25/2024",
             "company": "Test Company",
+            "company_url": "https://example.com",
             "reason": "Exercise An Option",
             "obligation": "$50",
             "desc": "This exercises option year.",
@@ -132,7 +135,7 @@ def test_process_search_contract_naics_results(mocker):
         },
         {
             "type": "TextBlock",
-            "text": "**1. Test Contract Name - 123456789 - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**1. Test Contract Name -** 123456789 - [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -142,7 +145,7 @@ def test_process_search_contract_naics_results(mocker):
         },
         {
             "type": "TextBlock",
-            "text": "**2. All of NAICS 541512 - Test Agency - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**2. All of NAICS 541512 - Test Agency - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -165,6 +168,7 @@ def test_process_search_contract_results(mocker):
         {
             "date": "02/25/2024",
             "company": "Test Company",
+            "company_url": "https://example.com",
             "reason": "Exercise An Option",
             "obligation": "$50",
             "desc": "This exercises option year.",
@@ -184,7 +188,7 @@ def test_process_search_contract_results(mocker):
         },
         {
             "type": "TextBlock",
-            "text": "**1. Test Contract Name - 123456789 - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**1. Test Contract Name -** 123456789 - [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -225,7 +229,7 @@ def test_teams_post(mocker):
         },
         {
             "type": "TextBlock",
-            "text": "**1. Test Contract Name - 123456789 - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**1. Test Contract Name -** 123456789 - [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
@@ -235,7 +239,7 @@ def test_teams_post(mocker):
         },
         {
             "type": "TextBlock",
-            "text": "**2. All of NAICS 541512 - Agency Name - [View updates](https://example.com)**\n\n- 02/25/2024 **|** Test Company **|** Exercise An Option **| $50 |** This exercises option year.",
+            "text": "**2. All of NAICS 541512 - Agency Name - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
             "wrap": True,
         },
         {
