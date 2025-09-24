@@ -110,7 +110,7 @@ def test_format_results():
 
 def test_process_search_contract_naics_results(mocker):
     contract_list = "123456789: Test Contract Name"
-    naics_list = "541512:Test+Agency"
+    naics_list = "541512:Test+Agency:Test Agency"
     contract_details = [
         {
             "date": "02/25/2024",
@@ -206,7 +206,7 @@ def test_process_search_contract_results(mocker):
 
 def test_process_search_zero(mocker):
     contract_list = "123456789: Test Contract Name,098765432: Test Contract Name 2"
-    naics_list = "541512:Test+Agency,541511:Test+Agency+2"
+    naics_list = "541512:Test+Agency:Test Agency,541511:Test+Agency+2:Test Agency 2"
     contract_details = []
 
     mocker.patch(

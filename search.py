@@ -111,7 +111,7 @@ def format_results(raw_results: list[dict]) -> list:
             if "contract_no" in result:
                 content = f'**{result["index"]}. {result["contract_nm"]} -** {result["contract_no"]} - [View updates]({result["url"]})'
             elif "naics" in result:
-                agency = result["agency"].replace("+", " ")
+                agency = result["agency"]
                 content = f'**{result["index"]}. All of NAICS {result["naics"]} - {agency} - [View updates]({result["url"]})**'
 
             for detail in result["contract_details"]:
@@ -126,7 +126,7 @@ def format_results(raw_results: list[dict]) -> list:
 def process_search(contract_list: str, naics_list: str) -> list:
     # Prepare fpds search and format results
     contract_pairs = []
-    naics_pairs = []
+    naics_triplets = []
     raw_results = []
     yday = (datetime.now() - timedelta(days=1)).strftime("%Y/%m/%d")
 
@@ -134,7 +134,7 @@ def process_search(contract_list: str, naics_list: str) -> list:
         contract_pairs = contract_list.split(",")
 
     if naics_list:
-        naics_pairs = naics_list.split(",")
+        naics_triplets = naics_list.split(",")
 
     for pair in contract_pairs:
         log.info("Processing contract number search")
@@ -156,19 +156,20 @@ def process_search(contract_list: str, naics_list: str) -> list:
 
         time.sleep(5)
 
-    for pair in naics_pairs:
+    for triplet in naics_triplets:
         log.info("Processing NAICS search")
 
-        naics, agency = pair.split(":", 1)
+        naics, agency, abbr = triplet.split(":")
         naics = naics.strip()
         agency = agency.strip()
+        abbr = abbr.strip()
         contract_details, url = search({"naics": naics, "agency": agency}, yday)
 
         if contract_details:
             raw_results.append(
                 {
                     "naics": naics,
-                    "agency": agency,
+                    "agency": abbr,
                     "contract_details": contract_details,
                     "url": url,
                 }

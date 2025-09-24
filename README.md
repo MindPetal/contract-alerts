@@ -8,9 +8,9 @@ The [Contract-Alerts-Run](https://github.com/MindPetal/contract-alerts/actions/w
 ```
    123456789:My Contract,098765432:Your Contract
 ```
-- NAICS_LIST: A comma separated string on NAICS and agency names
+- NAICS_LIST: A comma separated string on NAICS, agency names and abbr
 ```
-   541512:THE+AGENCY+NAME
+   541512:THE+AGENCY+NAME:ABBR
 ```
 - MS_URL: MS Teams webhook URL for your organization.
 
