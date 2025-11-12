@@ -227,6 +227,8 @@ def main(contract_list: str, naics_list: str, ms_webhook_url: str) -> None:
         api_config.host = ms_webhook_url
         api_client = client.ApiClient(api_config)
         teams_post(api_client, contract_results)
+    else:
+        log.info("No contract updates found")
 
 
 """ Read in contract_list, naics_list, ms_webhook_url
