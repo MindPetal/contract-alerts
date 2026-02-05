@@ -112,7 +112,7 @@ def format_results(raw_results: list[dict]) -> list:
                 content = f'**{result["index"]}. {result["contract_nm"]} -** {result["contract_no"]} - [View updates]({result["url"]})'
             elif "naics" in result:
                 agency = result["agency"]
-                content = f'**{result["index"]}. All of NAICS {result["naics"]} - {agency} - [View updates]({result["url"]})**'
+                content = f'**{result["index"]}. {agency} - all of NAICS {result["naics"]} - [View updates]({result["url"]})**'
 
             for detail in result["contract_details"]:
                 desc = detail["desc"].replace("\n", " ")
