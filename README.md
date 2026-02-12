@@ -1,5 +1,7 @@
-# FPDS contract search and post to MS Teams
+# ARCHIVED -- FPDS contract search and post to MS Teams
 [![contract-alerts-build](https://github.com/MindPetal/contract-alerts/actions/workflows/contract-alerts-build.yaml/badge.svg)](https://github.com/MindPetal/contract-alerts/actions/workflows/contract-alerts-build.yaml) [![contract-alerts-run](https://github.com/MindPetal/contract-alerts/actions/workflows/contract-alerts-run.yaml/badge.svg)](https://github.com/MindPetal/contract-alerts/actions/workflows/contract-alerts-run.yaml)
+
+**This repo has been archived and replaced by https://github.com/MindPetal/sam-contract-alerts**
 
 Python client to scrape government contracts updates from the FPDS website for the prior day.
 

@@ -95,7 +95,11 @@ def test_format_results():
         },
         {
             "type": "TextBlock",
+<<<<<<< HEAD
             "text": "**2. Test Agency - all of NAICS 541512 - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+=======
+            "text": "**2. Test Agency - all of NAICS 541512 -** [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+>>>>>>> formatting
             "wrap": True,
         },
         {
@@ -145,7 +149,11 @@ def test_process_search_contract_naics_results(mocker):
         },
         {
             "type": "TextBlock",
+<<<<<<< HEAD
             "text": "**2. Test Agency - all of NAICS 541512 - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+=======
+            "text": "**2. Test Agency - all of NAICS 541512 -** [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+>>>>>>> formatting
             "wrap": True,
         },
         {
@@ -239,7 +247,11 @@ def test_teams_post(mocker):
         },
         {
             "type": "TextBlock",
+<<<<<<< HEAD
             "text": "**2. Agency Name - all of NAICS 541512 - [View updates](https://example.com)**\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+=======
+            "text": "**2. Agency Name - all of NAICS 541512 -** [View updates](https://example.com)\n\n- **Date Signed:** 02/25/2024 | **Company:** [Test Company](https://example.com) | **Reason:** Exercise An Option | **Obligation:** $50 | **Description:** This exercises option year.",
+>>>>>>> formatting
             "wrap": True,
         },
         {
